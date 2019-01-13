@@ -7,9 +7,16 @@
 
 namespace JohnWatkins0\WPAutoload;
 
+/**
+ * Registers an autoloader.
+ *
+ * @param string $namespace The namespace.
+ * @param string $dir The root directory to which the namespace maps.
+ * @return void
+ */
 function register_wp_autoload( $namespace, $dir ) {
 	spl_autoload_register(
-		function( $class ) use( $namespace, $dir ) {
+		function( $class ) use ( $namespace, $dir ) {
 			if ( 0 === strpos( $class, '\\' ) ) {
 				$class = substr( $class, 1 );
 			}

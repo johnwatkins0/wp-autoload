@@ -3,4 +3,9 @@ php:
   - "7.1"
 install:
   - composer install
-script: phpunit
+script:
+  - phpcs
+  - phpunit
+notifications:
+  email: false
+  slack: johnwatkins0:VNM6Rad4WILTZAwHDY4xbybX
